@@ -3,6 +3,8 @@ using UnityEngine;
 public class SessionDataLogger : MonoBehaviour
 {
     public static SessionDataLogger Instance;
+    private string _bestScoreName;
+    private int _inputName;
 
     private void Awake()
     {
@@ -15,4 +17,6 @@ public class SessionDataLogger : MonoBehaviour
         Instance = this;
         DontDestroyOnLoad(gameObject);
     }
+    
+    
 }

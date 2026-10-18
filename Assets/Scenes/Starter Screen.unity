@@ -569,6 +569,7 @@ GameObject:
   - component: {fileID: 913786214}
   - component: {fileID: 913786213}
   - component: {fileID: 913786212}
+  - component: {fileID: 913786215}
   m_Layer: 5
   m_Name: InputField (TMP)
   m_TagString: Untagged
@@ -657,7 +658,19 @@ MonoBehaviour:
   m_CharacterLimit: 0
   m_OnEndEdit:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 913786215}
+        m_TargetAssemblyTypeName: NameInputDataHandler, Assembly-CSharp
+        m_MethodName: SetInputName
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_OnSubmit:
     m_PersistentCalls:
       m_Calls: []
@@ -735,6 +748,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 913786210}
   m_CullTransparentMesh: 1
+--- !u!114 &913786215
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 913786210}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b14671e28d2094a34ad96f56361fa9d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  isDebugging: 0
 --- !u!1 &1099059105
 GameObject:
   m_ObjectHideFlags: 0
@@ -779,6 +805,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8725cf2509eb471c93f35444a0e23e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  isDebugging: 0
 --- !u!1 &1212537659
 GameObject:
   m_ObjectHideFlags: 0
@@ -1375,6 +1402,7 @@ GameObject:
   - component: {fileID: 1749865522}
   - component: {fileID: 1749865521}
   - component: {fileID: 1749865520}
+  - component: {fileID: 1749865523}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -1446,10 +1474,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1532447203}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 1749865523}
+        m_TargetAssemblyTypeName: SceneChange, Assembly-CSharp
+        m_MethodName: ChangeScene
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1496,6 +1524,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1749865518}
   m_CullTransparentMesh: 1
+--- !u!114 &1749865523
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1749865518}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f307ecde014d94373a58a72b4d7b005b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
 --- !u!1 &2029637164
 GameObject:
   m_ObjectHideFlags: 0

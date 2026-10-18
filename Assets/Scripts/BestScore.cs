@@ -8,6 +8,8 @@ public class BestScore : MonoBehaviour
     private Text _bestScoreText;
     private int _bestScore;
     private string _nameBestScore;
+    
+    
 
     private void Awake()
     {
@@ -20,9 +22,20 @@ public class BestScore : MonoBehaviour
         
     }
 
+    public void UpdateBestScore()
+    {
+        _bestScoreText.text = "Best Score: " + _nameBestScore + " : " + _bestScore;
+    }
+
     private void Start()
     {
         GetScoreData();
+    }
+
+    private void SetBestScoreName(string _name)
+    {
+        _nameBestScore = _name;
+        
     }
 
     private void GetScoreData()
