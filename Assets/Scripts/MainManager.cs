@@ -21,11 +21,14 @@ public class MainManager : MonoBehaviour
 
     // MIGRATED: InputAction replaces Input.GetKeyDown(KeyCode.Space)
     private InputAction m_LaunchAction;
+    
+    private BestScore m_BestScoreText;
 
     // MIGRATED: bind the Space key as a button action
     void Awake()
     {
         m_LaunchAction = new InputAction("Launch", InputActionType.Button, "<Keyboard>/space");
+        m_BestScoreText = FindFirstObjectByType<BestScore>();
     }
 
     // MIGRATED: enable the action while the component is active
@@ -91,7 +94,18 @@ public class MainManager : MonoBehaviour
 
     public void GameOver()
     {
+        CompareScores();
         m_GameOver = true;
         GameOverText.SetActive(true);
+    }
+
+    private void CompareScores()
+    {
+        if (m_Points > SessionDataLogger.Instance.GetBestScore())
+        {
+            string name = SceneDataManager.Instance.GetInputName(); 
+            m_BestScoreText.SetNewScore(m_Points);
+            SessionDataLogger.Instance.SetBestScoreData(m_Points,name);
+        }
     }
 }

@@ -8,8 +8,6 @@ public class BestScore : MonoBehaviour
     private Text _bestScoreText;
     private int _bestScore;
     private string _nameBestScore;
-    
-    
 
     private void Awake()
     {
@@ -18,8 +16,12 @@ public class BestScore : MonoBehaviour
         {
             Debug.LogError("BestScoreText is NULL");
         }
-        
-        
+    }
+
+    public void SetNewScore(int score)
+    {
+        _bestScore = score;
+        UpdateBestScore();
     }
 
     public void UpdateBestScore()
@@ -32,14 +34,10 @@ public class BestScore : MonoBehaviour
         GetScoreData();
     }
 
-    private void SetBestScoreName(string _name)
-    {
-        _nameBestScore = _name;
-        
-    }
-
     private void GetScoreData()
     {
-        _bestScore = SceneDataManager.Instance.GetBestScore();
+        _bestScore = SessionDataLogger.Instance.GetBestScore();
+        _nameBestScore = SessionDataLogger.Instance.GetBestScoreName();
+        UpdateBestScore();
     }
 }
